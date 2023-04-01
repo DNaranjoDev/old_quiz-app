@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './question.dart';
+import './answer.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,31 +11,17 @@ class MyApp extends StatefulWidget {
 
   @override
   State<MyApp> createState() {
-    return MyAppState();
+    return _MyAppState();
   }
 }
 
-class MyAppState extends State<MyApp> {
-  var questionIndex = 0;
-  void answerQuestion1() {
+class _MyAppState extends State<MyApp> {
+  var _questionIndex = 0;
+  void _answerQuestion() {
     setState(() {
-      questionIndex = questionIndex + 1;
+      _questionIndex = _questionIndex + 1;
     });
     print('THE CHOSEN ONE');
-  }
-
-  void answerQuestion2() {
-    setState(() {
-      questionIndex = questionIndex + 1;
-    });
-    print('THE CHOSEN TWO');
-  }
-
-  void answerQuestion3() {
-    setState(() {
-      questionIndex = questionIndex + 1;
-    });
-    print('THE CHOSEN THREE');
   }
 
   @override
@@ -50,20 +38,20 @@ class MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            Text(
-              questions[questionIndex],
+            Question(
+              questions[_questionIndex],
             ),
-            ElevatedButton(
-              onPressed: answerQuestion1,
-              child: Text('Answer 1'),
+            Answer(
+              'Answer modified 1',
+              _answerQuestion,
             ),
-            ElevatedButton(
-              onPressed: answerQuestion2,
-              child: Text('Answer 2'),
+            Answer(
+              'Answer 2',
+              _answerQuestion,
             ),
-            ElevatedButton(
-              onPressed: answerQuestion3,
-              child: Text('Answer 3'),
+            Answer(
+              'answerText',
+              _answerQuestion,
             ),
           ],
         ),
