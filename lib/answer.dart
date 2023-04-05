@@ -9,7 +9,7 @@ class Answer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width * 0.95,
       child: ElevatedButton(
         style: ButtonStyle(
           backgroundColor:
