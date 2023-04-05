@@ -8,7 +8,8 @@ class Answer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      margin: const EdgeInsets.only(top: 15),
       width: MediaQuery.of(context).size.width * 0.95,
       child: ElevatedButton(
         style: ButtonStyle(

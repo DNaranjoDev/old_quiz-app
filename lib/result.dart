@@ -23,21 +23,17 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
             resultPhrase,
             style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
-          ElevatedButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
-                  Colors.blue), // Background button color
-              foregroundColor:
-                  MaterialStateProperty.all(Colors.white), // Font color
-            ),
+          TextButton(
+            style: TextButton.styleFrom(foregroundColor: Colors.black),
             onPressed: resetHandler,
-            child: const Text('I want to do it again!'),
+            child: const Text('Click me to reset the quiz!'),
           ),
         ],
       ),
